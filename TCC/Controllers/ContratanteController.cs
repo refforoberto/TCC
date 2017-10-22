@@ -24,12 +24,12 @@ namespace TCC.Controllers
     {
         private TCCContext db = new TCCContext();
 
-      
 
+        [HttpGet]
         [Route("contratante/all")]
-        public IHttpActionResult All()
+        public IHttpActionResult all()
         {
-            var contratante = "";
+
 
             //db.Configuration.ProxyCreationEnabled = false;
             /* db.Configuratio.ProxyCreationEnabled = false;
@@ -60,7 +60,9 @@ namespace TCC.Controllers
                  s.Relacoes
              }).ToList();*/
 
-
+            var contratante =  db.Contratante.
+                    Include(x => x.ContratanteEstilo)                          
+                           .ToList();
 
 
             return Ok(contratante);
