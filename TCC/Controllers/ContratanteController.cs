@@ -109,7 +109,7 @@ namespace TCC.Controllers
                     contratante.Telefone1        = (String)obj["whatsapp"];
                     contratante.Telefone2        = (String)obj["telefone"];
 
-                    String img = (String)obj["facebook"];
+                    String img = (String)obj["img"];
 
                     contratante.img = LoadImage(img);
 
