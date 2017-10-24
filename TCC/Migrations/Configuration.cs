@@ -51,7 +51,7 @@ namespace TCC.Migrations
                     Site = "www.american.com",
                     Telefone1 = "(47)99999-88-77",
                     Telefone2 = "(47)3344-88-77",
-                    img = "assets/images/american.png",
+                    img2 = "assets/images/american.png",
                     Facebook = "https://www.facebook.com/AmericanMusicPub/",
                     Detalhe = "Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os porris que eu tomo, " +
                     "mas ninguém vê os tombis que eu levo! Manduma pindureta quium dia nois paga. Atirei o pau no gatis," +
@@ -74,7 +74,7 @@ namespace TCC.Migrations
                     Compl = "",
                     Site = "www.duds.com.br",
                     Telefone1 = "(47)99999-88-77",
-                    img = "assets/images/duds.jpg",
+                    img2 = "assets/images/duds.jpg",
                     Detalhe = "Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os porris que eu tomo, " +
                     "mas ninguém vê os tombis que eu levo! Manduma pindureta quium dia nois paga. Atirei o pau no gatis," +
                     " per gatis num morreus. Quem num gosta di mé, boa gentis num é."
@@ -96,7 +96,7 @@ namespace TCC.Migrations
                     Compl = "",
                     Site = "www.manosbar.com.br",
                     Telefone1 = "(47)99999-88-77",
-                    img = "assets/images/manos.jpg",
+                    img2 = "assets/images/manos.jpg",
                     Detalhe = "Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os porris que eu tomo, " +
                     "mas ninguém vê os tombis que eu levo! Manduma pindureta quium dia nois paga. Atirei o pau no gatis," +
                     " per gatis num morreus. Quem num gosta di mé, boa gentis num é."
@@ -117,7 +117,7 @@ namespace TCC.Migrations
                     Compl = "",
                     Site = "www.bardosamigos.com",
                     Telefone1 = "(47)99999-88-77",
-                    img = "assets/images/barAmigos.jpg",
+                    img2 = "assets/images/barAmigos.jpg",
                     Detalhe = "Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os porris que eu tomo, " +
                     "mas ninguém vê os tombis que eu levo! Manduma pindureta quium dia nois paga. Atirei o pau no gatis," +
                     " per gatis num morreus. Quem num gosta di mé, boa gentis num é."

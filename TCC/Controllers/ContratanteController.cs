@@ -7,6 +7,10 @@ using System.Net.Http;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using System.IO;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Web;
 
 namespace TCC.Controllers
 {
@@ -100,11 +104,16 @@ namespace TCC.Controllers
                     contratante.Rua              = (String)obj["rua"];
                     contratante.Senha            = (String)obj["senha"];
                     contratante.Facebook         = (String)obj["facebook"];
-                    contratante.img              = (String)obj["img"];
+                   
                     contratante.Site             = (String)obj["site"];
-                    contratante.Telefone1        = (String)obj["telefone1"];
-                    contratante.Telefone2        = (String)obj["telefone1"];
-                    
+                    contratante.Telefone1        = (String)obj["whatsapp"];
+                    contratante.Telefone2        = (String)obj["telefone"];
+
+                    String img = (String)obj["facebook"];
+
+                    contratante.img = LoadImage(img);
+
+
 
                     db.Contratante.Add(contratante);
                     db.SaveChanges();
@@ -157,6 +166,17 @@ namespace TCC.Controllers
 
 
             
+        }
+
+        public byte[] LoadImage(String o)
+        {
+            //data:image/gif;base64,
+            //this image is a single pixel (black)
+            byte[] bytes = Convert.FromBase64String(o);
+
+            
+
+            return bytes;
         }
 
 

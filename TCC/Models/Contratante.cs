@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -39,7 +40,9 @@ namespace TCC.Models
 
         public long CEP { get; set; }
 
-        public String img { get; set; }
+        public byte[] img { get; set; }
+
+        public String img2 { get; set; }
 
         public String Telefone1 { get; set; }
 

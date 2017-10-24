@@ -13,7 +13,7 @@ namespace TCC.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201710240208083_init"; }
+            get { return "201710240457376_init"; }
         }
         
         string IMigrationMetadata.Source
