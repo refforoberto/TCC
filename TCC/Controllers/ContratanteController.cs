@@ -1,22 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using TCC.Models;
-
-
-using Newtonsoft.Json.Linq;
-
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
-
 using System.Data.Entity;
-using Newtonsoft.Json;
+using System.Net.Http;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using System.IO;
 
 namespace TCC.Controllers
 {
@@ -67,6 +57,108 @@ namespace TCC.Controllers
 
             return Ok(contratante);
         }
+
+        [HttpPost]
+        [Route("contratante/create")]
+
+        public IHttpActionResult Create(JObject obj)
+        {
+            Contratante contratante;
+
+            String email = (String)obj["email"];
+
+            try
+            { 
+                try
+                {
+                    contratante = db.Contratante.Where(c => c.EmailContratante == email).FirstOrDefault();
+
+                    if (contratante != null)
+                    {
+                        return Json(
+                            new
+                            {
+                                code = 1,
+                                status = "NOK",
+                                message = "Contratante já Cadastrado"
+                            });
+                    }
+
+                    contratante = new Contratante();
+                    
+                    contratante.Bairro           = (String)obj["bairro"];
+                    contratante.CEP              = (long)  obj["cep"];
+                    contratante.Cidade           = (String)obj["cidade"];
+                    contratante.CNPJ             = (String)obj["cnpj"];
+                    contratante.Compl            = (String)obj["complemento"];
+                    contratante.Descricao        = (String)obj["descricao"];
+                    contratante.Detalhe          = (String)obj["detalhe"];
+                    contratante.EmailContratante = (String)obj["email"];
+                    contratante.Estado           = (String)obj["estado"];
+                    contratante.Nome             = (String)obj["nome"];
+                    contratante.Numero           = (int)   obj["numero"];
+                    contratante.Rua              = (String)obj["rua"];
+                    contratante.Senha            = (String)obj["senha"];
+                    contratante.Facebook         = (String)obj["facebook"];
+                    contratante.img              = (String)obj["img"];
+                    contratante.Site             = (String)obj["site"];
+                    contratante.Telefone1        = (String)obj["telefone1"];
+                    contratante.Telefone2        = (String)obj["telefone1"];
+                    
+
+                    db.Contratante.Add(contratante);
+                    db.SaveChanges();
+                } catch
+                {
+                    throw;
+                }
+    
+                try
+                {
+                    IList<Estilo> estilos = new List<Estilo>();
+
+                    foreach (int i in obj["estilo"])  {
+
+                        ContratanteEstilo contratanteEstilo = new ContratanteEstilo();
+                        contratanteEstilo.Contratante = contratante;
+                        contratanteEstilo.Estilo = db.Estilo.Where(e => e.Id == i).FirstOrDefault();
+                        db.ContratanteEstilo.Add(contratanteEstilo);
+                        db.SaveChanges();
+                    }
+                    
+                } catch
+                {
+                    throw;
+                }
+
+                return Json(new
+                {
+                    code = 2,
+                    status = "OK",
+                    message = "Contratante cadastrado com sucesso"
+                });
+
+  
+
+
+
+
+
+
+            } catch (Exception ex)
+            {
+                return Json(new
+                {
+                    status = "ERROR",
+                    message = "Error: " + ex.Message
+                });
+            }
+
+
+
+            
+        }
+
 
         [HttpPost]
         [Route("contratante/login")]

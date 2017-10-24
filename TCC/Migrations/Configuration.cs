@@ -22,7 +22,9 @@ namespace TCC.Migrations
                  new Estilo { Id = 3, Nome = "Pagode" },
                  new Estilo { Id = 4, Nome = "Sertanejo" },
                  new Estilo { Id = 5, Nome = "MPB" },
-                 new Estilo { Id = 6, Nome = "Outros" }
+                 new Estilo { Id = 6, Nome = "Samba" },
+                 new Estilo { Id = 7, Nome = "Outros" }
+
                  );
             context.SaveChanges();
 

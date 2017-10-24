@@ -196,9 +196,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710222051182_ini.cs" />
-    <Compile Include="Migrations\201710222051182_ini.Designer.cs">
-      <DependentUpon>201710222051182_ini.cs</DependentUpon>
+    <Compile Include="Migrations\201710240208083_init.cs" />
+    <Compile Include="Migrations\201710240208083_init.Designer.cs">
+      <DependentUpon>201710240208083_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artista.cs" />
@@ -246,6 +246,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\TCC-REFFO - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -285,8 +286,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710222051182_ini.resx">
-      <DependentUpon>201710222051182_ini.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710240208083_init.resx">
+      <DependentUpon>201710240208083_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
